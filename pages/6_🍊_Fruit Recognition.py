@@ -6,7 +6,7 @@ from keras.models import load_model
 import requests
 from bs4 import BeautifulSoup
 
-model = load_model('./pages/Fruits/FV.h5')
+model = load_model('./pages/Fruits Model/FV.h5')
 labels = {0: 'apple', 1: 'banana', 2: 'beetroot', 3: 'bell pepper', 4: 'cabbage', 5: 'capsicum', 6: 'carrot',
           7: 'cauliflower', 8: 'chilli pepper', 9: 'corn', 10: 'cucumber', 11: 'eggplant', 12: 'garlic', 13: 'ginger',
           14: 'grapes', 15: 'jalepeno', 16: 'kiwi', 17: 'lemon', 18: 'lettuce',
@@ -49,12 +49,12 @@ def processed_img(img_path):
 
 
 def run():
-    st.title("Fruits🍍-Vegetable🍅 Classification")
+    st.title("Fruits and Vegetables Recognition and Classification 🍊🍎🍋🍅🍏")
     img_file = st.file_uploader("Choose an Image", type=["jpg", "png"])
     if img_file is not None:
         img = Image.open(img_file).resize((250, 250))
         st.image(img, use_column_width=False)
-        save_image_path = './pages/foods/' + img_file.name
+        save_image_path = './food_saved/' + img_file.name
         with open(save_image_path, "wb") as f:
             f.write(img_file.getbuffer())
 
@@ -69,7 +69,7 @@ def run():
             st.success("**Predicted : " + result + '**')
             cal = fetch_calories(result)
             if cal:
-                st.warning('**' + cal + '(100 grams)**')
+                st.warning('**' + cal + ' / (100 grams)**')
 
 
 run()
