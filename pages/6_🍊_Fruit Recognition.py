@@ -6,7 +6,7 @@ from keras.models import load_model
 import requests
 from bs4 import BeautifulSoup
 
-model = load_model('./pages/Fruits Model/FV.h5')
+model = load_model('./fruit_helper/FV.h5')
 labels = {0: 'apple', 1: 'banana', 2: 'beetroot', 3: 'bell pepper', 4: 'cabbage', 5: 'capsicum', 6: 'carrot',
           7: 'cauliflower', 8: 'chilli pepper', 9: 'corn', 10: 'cucumber', 11: 'eggplant', 12: 'garlic', 13: 'ginger',
           14: 'grapes', 15: 'jalepeno', 16: 'kiwi', 17: 'lemon', 18: 'lettuce',
