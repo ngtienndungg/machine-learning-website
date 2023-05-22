@@ -32,7 +32,7 @@ if st.session_state.stop == True:
 
 
 svc = joblib.load('./face_recognition_helper/svc.pkl')
-mydict = ['VanTung', 'TienDung']
+mydict = ['TienDung', 'VanTung']
 
 
 def visualize(input, faces, fps, thickness=2):
